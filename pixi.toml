@@ -10,3 +10,8 @@ version = "0.1.0"
 
 [dependencies]
 python = ">=3.10,<3.13"
+
+[pypi-dependencies]
+torch = ">=2.6.0, <3"
+torchvision = ">=0.21.0, <0.22"
+torchaudio = ">=2.6.0, <3"
