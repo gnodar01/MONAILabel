@@ -147,7 +147,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/f4/3c/8cc1cc84deffa6e25d2d0c688ebb80635dfdbf1dbea3e30c541c8cf4d860/pydantic-2.10.6-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8d/f0/49129b27c43396581a635d8710dae54a791b17dfc50c70164866bbf865e3/pydantic_core-2.27.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/b4/46/93416fdae86d40879714f72956ac14df9c7b76f7d41a4d68aa9f71a0028b/pydantic_settings-2.7.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/27/a6/98651e752a49f341aa99aa3f6c8ba361728dfc064242884355419df63669/pydicom-3.0.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/35/2a/8c0f6fe243e6b6793868c6834203a44cc8f3f25abad780e1c7b21e15594d/pydicom-2.4.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/45/2d/2abfff99acd1e6a55a25dd51de3ce9af3eeaa9ffc6b7d05e037b7ace856c/pydicom_seg-0.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/ad/689f02752eeec26aed679477e80e632ef1b682313be70793d798c1d5fc8f/PyJWT-2.10.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/f4/01/a309b8fb9c4dd376108ea3cc85b856e61fe8a7d6c68ff9fcbfeb1160d3ad/pynetdicom-2.0.2-py3-none-any.whl
@@ -171,6 +171,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/d7/77/6d1da74cb0b7ba07750d6ef7e48f87807b53df1cf4a090775115dd9cc5ea/scikit_image-0.25.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/29/7a/8bce8968883e9465de20be15542f4c7e221952441727c4dad24d534c6d99/scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/b0/3c/0de11ca154e24a57b579fb648151d901326d3102115bc4f9a7a86526ce54/scipy-1.15.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+      - pypi: git+https://github.com/facebookresearch/segment-anything#dca509fe793f601edb92606367a655c15ac00fdf
       - pypi: https://files.pythonhosted.org/packages/69/8a/b9dc7678803429e4a3bc9ba462fa3dd9066824d3c607490235c6a796be5a/setuptools-75.8.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d5/7d/9a57e187cbf2fbbbdfd4044a4f9ce141c8d221f9963750d3b001f0ec080d/shapely-2.0.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/04/01/092450812318797588d34868d977a863ea34c6109836f4d6d33c939b4298/SimpleITK-2.4.1-cp311-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
@@ -2225,21 +2226,11 @@ packages:
   - tomli>=2.0.1 ; extra == 'toml'
   - pyyaml>=6.0.1 ; extra == 'yaml'
   requires_python: '>=3.8'
-- pypi: https://files.pythonhosted.org/packages/27/a6/98651e752a49f341aa99aa3f6c8ba361728dfc064242884355419df63669/pydicom-3.0.1-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/35/2a/8c0f6fe243e6b6793868c6834203a44cc8f3f25abad780e1c7b21e15594d/pydicom-2.4.4-py3-none-any.whl
   name: pydicom
-  version: 3.0.1
-  sha256: db32f78b2641bd7972096b8289111ddab01fb221610de8d7afa835eb938adb41
+  version: 2.4.4
+  sha256: f9f8e19b78525be57aa6384484298833e4d06ac1d6226c79459131ddb0bd7c42
   requires_dist:
-  - numpy ; extra == 'basic'
-  - types-pydicom ; extra == 'basic'
-  - black==24.8.0 ; extra == 'dev'
-  - mypy==1.11.2 ; extra == 'dev'
-  - pydicom-data ; extra == 'dev'
-  - pytest ; extra == 'dev'
-  - pytest-cov ; extra == 'dev'
-  - ruff==0.6.3 ; extra == 'dev'
-  - types-requests ; extra == 'dev'
-  - pre-commit ; extra == 'dev'
   - numpy ; extra == 'docs'
   - numpydoc ; extra == 'docs'
   - matplotlib ; extra == 'docs'
@@ -2248,16 +2239,8 @@ packages:
   - sphinx-rtd-theme ; extra == 'docs'
   - sphinx-gallery ; extra == 'docs'
   - sphinxcontrib-napoleon ; extra == 'docs'
-  - sphinxcontrib-jquery ; extra == 'docs'
   - sphinx-copybutton ; extra == 'docs'
-  - pylibjpeg[libjpeg] ; extra == 'gpl-license'
-  - numpy ; extra == 'pixeldata'
-  - pillow ; extra == 'pixeldata'
-  - pyjpegls ; extra == 'pixeldata'
-  - pylibjpeg[openjpeg] ; extra == 'pixeldata'
-  - pylibjpeg[rle] ; extra == 'pixeldata'
-  - python-gdcm ; extra == 'pixeldata'
-  requires_python: '>=3.10'
+  requires_python: '>=3.7'
 - pypi: https://files.pythonhosted.org/packages/45/2d/2abfff99acd1e6a55a25dd51de3ce9af3eeaa9ffc6b7d05e037b7ace856c/pydicom_seg-0.4.1-py3-none-any.whl
   name: pydicom-seg
   version: 0.4.1
@@ -2661,6 +2644,19 @@ packages:
   - doit>=0.36.0 ; extra == 'dev'
   - pydevtool ; extra == 'dev'
   requires_python: '>=3.10'
+- pypi: git+https://github.com/facebookresearch/segment-anything#dca509fe793f601edb92606367a655c15ac00fdf
+  name: segment-anything
+  version: '1.0'
+  requires_dist:
+  - matplotlib ; extra == 'all'
+  - pycocotools ; extra == 'all'
+  - opencv-python ; extra == 'all'
+  - onnx ; extra == 'all'
+  - onnxruntime ; extra == 'all'
+  - flake8 ; extra == 'dev'
+  - isort ; extra == 'dev'
+  - black ; extra == 'dev'
+  - mypy ; extra == 'dev'
 - pypi: https://files.pythonhosted.org/packages/69/8a/b9dc7678803429e4a3bc9ba462fa3dd9066824d3c607490235c6a796be5a/setuptools-75.8.0-py3-none-any.whl
   name: setuptools
   version: 75.8.0

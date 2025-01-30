@@ -24,3 +24,5 @@ cupy-cuda12x = ">=13.3.0, <14"
 cellpose = "==3.0.8"
 natsort = "==8.4.0"
 fastremap = "==1.15.0"
+pydicom = "<3.0.0"
+segment-anything = { git = "git+https://github.com/facebookresearch/segment-anything.git" }
