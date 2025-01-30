@@ -14,6 +14,9 @@ serve_vista = "$PIXI_PROJECT_ROOT/.pixi/envs/default/lib/python3.12/site-package
 [dependencies]
 python = ">=3.10,<3.13"
 
+# installation is specific to cuda 12.x
+# requires (optional) independent installation of Cuda Toolkit for gpu acceleration:
+# https://developer.nvidia.com/cuda-downloads
 [pypi-dependencies]
 torch = ">=2.6.0, <3"
 torchvision = ">=0.21.0, <0.22"
@@ -26,3 +29,4 @@ natsort = "==8.4.0"
 fastremap = "==1.15.0"
 pydicom = "<3.0.0"
 segment-anything = { git = "git+https://github.com/facebookresearch/segment-anything.git" }
+
