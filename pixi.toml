@@ -8,6 +8,8 @@ version = "0.1.0"
 
 [tasks]
 monailabel = "$PIXI_PROJECT_ROOT/.pixi/envs/default/lib/python3.12/site-packages/monailabel/scripts/monailabel"
+download_vista = "$PIXI_PROJECT_ROOT/.pixi/envs/default/lib/python3.12/site-packages/monailabel/scripts/monailabel apps --download --name vista2d --output apps"
+serve_vista = "$PIXI_PROJECT_ROOT/.pixi/envs/default/lib/python3.12/site-packages/monailabel/scripts/monailabel start_server --app apps/vista2d --studies datasets --conf models vista2d --conf preload true --conf skip_trainers true"
 
 [dependencies]
 python = ">=3.10,<3.13"

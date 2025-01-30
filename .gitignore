@@ -170,3 +170,5 @@ yarn.lock
 # pixi environments
 .pixi
 *.egg-info
+
+apps/
