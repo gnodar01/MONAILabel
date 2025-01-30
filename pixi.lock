@@ -44,6 +44,8 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/7e/d4/7ebdbd03970677812aac39c869717059dbb71a4cfc033ca6e5221787892c/click-8.1.8-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/7e/e8/64c37fadfc2816a7701fa8a6ed8d87327c7d54eacfbfb6edab14a2f2be75/cloudpickle-3.1.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ba/99/6794142b90b853a9155316c8f470d2e4821fe6f086b03e372aca848227dd/contourpy-1.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+      - pypi: https://files.pythonhosted.org/packages/90/9d/b6df8abb3d33ff5f728f00a6074ca68e8790c20d1b9a0828412c9cd17285/cucim-23.10.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+      - pypi: https://files.pythonhosted.org/packages/90/dc/da09e5184d94146b8cbf240c2bef1c4851cbafd7e2d60cc71b1530c766ec/cupy_cuda12x-13.3.0-cp312-cp312-manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a7/83/5b650ad043eaa7643ac10b3bd2cb63353f9ccdb70d8c75f47550673f486b/databricks_sdk-0.42.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6e/c6/ac0b6c1e2d138f1002bcf799d330bd6d85084fece321e662a14223794041/Deprecated-1.2.18-py2.py3-none-any.whl
@@ -54,6 +56,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/00/bb/eb786bb0cbc257d9cba8bb0737223ffce336fa9b3e9ab6ddc6b337b0d6ba/expiring_dict-1.1.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cb/84/a04c59324445f4bcc98dc05b39a1cd07c242dde643c1a3c21e4f7beaf2f2/expiringdict-1.2.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8f/7d/2d6ce181d7a5f51dedb8c06206cbf0ec026a99bf145edd309f9e17c3282f/fastapi-0.115.8-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/80/07/cdecb7aa976f34328372f1c4efd6c9dc1b039b3cc8d3f38787d640009a25/fastrlock-0.8.3-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/89/ec/00d68c4ddfedfe64159999e5f8a98fb8442729a63e2077eb9dcd89623d27/filelock-3.17.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6b/b6/82c7e601d6d3c3278c40b7bd35e17e82aa227f050aa9f66cb7b7fce29471/fire-0.7.0.tar.gz
       - pypi: https://files.pythonhosted.org/packages/af/47/93213ee66ef8fae3b93b3e29206f6b251e65c97bd91d8e1c5596ef15af0a/flask-3.1.0-py3-none-any.whl
@@ -409,6 +412,36 @@ packages:
   - pytest-xdist ; extra == 'test-no-images'
   - wurlitzer ; extra == 'test-no-images'
   requires_python: '>=3.10'
+- pypi: https://files.pythonhosted.org/packages/90/9d/b6df8abb3d33ff5f728f00a6074ca68e8790c20d1b9a0828412c9cd17285/cucim-23.10.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+  name: cucim
+  version: 23.10.0
+  sha256: 2c061ad28c3c1fa67bb62260f0a556f354c8ec2d6e3811eece375ed896d62945
+  requires_dist:
+  - click
+  - numpy
+  - lazy-loader>=0.1
+  requires_python: '>=3.6'
+- pypi: https://files.pythonhosted.org/packages/90/dc/da09e5184d94146b8cbf240c2bef1c4851cbafd7e2d60cc71b1530c766ec/cupy_cuda12x-13.3.0-cp312-cp312-manylinux2014_x86_64.whl
+  name: cupy-cuda12x
+  version: 13.3.0
+  sha256: e206bd8664f0763732b6012431f484ee535bffd77a5ae95e9bfe1c7c72396625
+  requires_dist:
+  - numpy>=1.22,<2.3
+  - fastrlock>=0.5
+  - scipy>=1.7,<1.14 ; extra == 'all'
+  - cython>=0.29.22,<3 ; extra == 'all'
+  - optuna>=2.0 ; extra == 'all'
+  - autopep8==1.5.5 ; extra == 'stylecheck'
+  - flake8==3.8.4 ; extra == 'stylecheck'
+  - pbr==5.5.1 ; extra == 'stylecheck'
+  - pycodestyle==2.6.0 ; extra == 'stylecheck'
+  - mypy==1.4.1 ; extra == 'stylecheck'
+  - types-setuptools==57.4.14 ; extra == 'stylecheck'
+  - packaging ; extra == 'test'
+  - pytest>=7.2 ; extra == 'test'
+  - hypothesis>=6.37.2,<6.55.0 ; extra == 'test'
+  - mpmath ; extra == 'test'
+  requires_python: '>=3.9'
 - pypi: https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl
   name: cycler
   version: 0.12.1
@@ -563,6 +596,10 @@ packages:
   - pydantic-settings>=2.0.0 ; extra == 'all'
   - pydantic-extra-types>=2.0.0 ; extra == 'all'
   requires_python: '>=3.8'
+- pypi: https://files.pythonhosted.org/packages/80/07/cdecb7aa976f34328372f1c4efd6c9dc1b039b3cc8d3f38787d640009a25/fastrlock-0.8.3-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_28_x86_64.whl
+  name: fastrlock
+  version: 0.8.3
+  sha256: 5f13ec08f1adb1aa916c384b05ecb7dbebb8df9ea81abd045f60941c6283a670
 - pypi: https://files.pythonhosted.org/packages/89/ec/00d68c4ddfedfe64159999e5f8a98fb8442729a63e2077eb9dcd89623d27/filelock-3.17.0-py3-none-any.whl
   name: filelock
   version: 3.17.0
