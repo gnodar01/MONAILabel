@@ -173,3 +173,5 @@ yarn.lock
 
 apps/
 datasets/
+.direnv/
+.envrc
